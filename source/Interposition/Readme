@@ -1,0 +1,10 @@
+How to:
+
+Open wrapper_template.c and follow the instructions
+
+Compile using the Makefile
+
+Link with native module with: 
+g++ -shared -pthread -rdynamic -m64  -Wl,-soname=<native_module>.node -o Release/obj.target/<native_module>.node -Wl,--no-as-needed /path/to/wrapper.so -Wl,--start-group native_module.o -Wl,--end-group
+
+

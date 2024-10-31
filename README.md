@@ -4,14 +4,15 @@ third-party native add-ons.
 
 Quick Jump: [Installation](#installation) | [Run](#run) | [Repo Structure](#repo-stracture) | [Documentation](#documentation)
 
-## Installation
+## Configuring and compiling
 ## Node
 The version used for the modifications in 8.9.4. Start by first creating
 the installation location for the custom Node.js environment. We advice
 to not use the default location of **configure** script, since it will install
 the modified Node.js gloabally.
 
-###Configure
+##Configure
+
 Change directory to Node source:
 ```
 cd binwrap/source/node-v8.9.4-sharedlibs
@@ -28,11 +29,18 @@ in configure script:
 ./configure --prefix=/home/<user>/path/to/node-install --shared-http-parser --shared-libuv --shared-openssl --shared-zlib --shared-cares
 ```
 
-###Compile 
+##Compile 
 After successfully configuring the make file, compile the source of node:
 ```
 make -j <number_of_cores-1>
 ```
+
+##Install
+Install compiled node to the specified installation folder with:
+```
+make install
+```
+
 ## Run
 
 ## Example
